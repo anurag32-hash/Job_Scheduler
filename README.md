@@ -16,7 +16,7 @@ Listing 13: Job class
 ```
 A job can have two status: REQUESTED, COMPLETED.
 ```
-6.1 Specifications
+## Specifications
 
 The main component in this part of the assignment is a Job. Each Job will belong to a Project
 and created by an User. The name of the Jobs will be unique (this is guaranteed in the test
@@ -30,7 +30,7 @@ be unique. All the Jobs will be stored in a Priority Queue, specifically a Max-H
 their priorities as the key.
 
 
-6.2 Commands
+## Commands
 
 A sample input file is shown in Listing 15.
 
@@ -47,7 +47,7 @@ ADD: Increase the budget of the project. PROJECT BUDGET
 6
 EMPTY_LINE: Let the scheduler execute a single JOB.
 
-6.3 Scheduler specifications
+## Scheduler specifications
 
 The scheduler will execute a single job whenever it will encounter an empty line in the input
 specifications. After the end of the INP (input file) file, scheduler will continue to execute
@@ -141,6 +141,8 @@ void print_stats();
 Listing 14: Interface specification
 ```
 
+Listing 14: Interface specification
+```
 1 USER Rob
 2 USER Harry
 3 USER Carry
@@ -180,7 +182,6 @@ Listing 14: Interface specification
 37 JOB ImageProcessing4 IITD.CS.ML.ICML Carry 10
 38 JOB Pipeline4 IITD.CS.OS.ASPLOS Harry 10
 
-
 39 JOB Kmeans4 IITD.CS.TH.SODA Carry 10
 40
 41 JOB DeepLearning5 IITD.CS.ML.ICML Rob 10
@@ -189,8 +190,9 @@ Listing 14: Interface specification
 44 JOB Kmeans5 IITD.CS.TH.SODA Carry 10
 45
 46 QUERY Kmeans
+```
 Listing 15: Input specification
-
+```
 1 Creating user
 2 Creating user
 3 Creating user
@@ -231,7 +233,6 @@ Listing 15: Input specification
 38 Creating job
 39 Creating job
 40 Running code
-
 
 41 Remaining jobs: 4
 42 Executing: DeepLearning1 from: IITD.CS.ML.ICML
@@ -284,7 +285,6 @@ Listing 15: Input specification
 89 Creating job
 90 Creating job
 
-
 91 Creating job
 92 Running code
 93 Remaining jobs: 16
@@ -335,7 +335,6 @@ Listing 15: Input specification
 138 System execution completed
 139 Running code
 140 Remaining jobs: 4
-
 
 141 Executing: Kmeans3 from: IITD.CS.TH.SODA
 142 Project: IITD.CS.TH.SODA budget remaining: 70
@@ -388,7 +387,6 @@ time=10, end_time=140, name=’Pipeline5’}
 175 Job{user=’Carry’, project=’IITD.CS.TH.SODA’, jobstatus=COMPLETED, execution_ti
 me=10, end_time=150, name=’Kmeans1’}
 
-
 176 Job{user=’Carry’, project=’IITD.CS.TH.SODA’, jobstatus=COMPLETED, execution_ti
 me=10, end_time=160, name=’Kmeans3’}
 177 Job{user=’Carry’, project=’IITD.CS.TH.SODA’, jobstatus=COMPLETED, execution_ti
@@ -411,5 +409,4 @@ me=10, end_time=null, name=’ImageProcessing4’}
 me=10, end_time=null, name=’ImageProcessing5’}
 187 Total unfinished jobs: 5
 188 --------------STATS DONE---------------
-
-
+```
