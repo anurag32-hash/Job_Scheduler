@@ -3,28 +3,6 @@
 In this part we will use Trie, Red-Black Tree and Priority Queue to implement a Job
 scheduler (Project management). The main part of this part are:
 
-1
-Project:
-The project class will be have a name, budget and priority.
-
-1 package ProjectManagement;
-2 public class Project {
-3 }
-Listing 11: Project class
-2
-User:
-
-1 package ProjectManagement;
-2 public class User implements Comparable<User> {
-3 @Override
-4 public int compareTo(User user) {
-5 return 0;
-6 }
-7 }
-Listing 12: User class
-3
-Job:
-
 ```
 1 package ProjectManagement;
 2 public class Job implements Comparable<Job> {
@@ -104,7 +82,6 @@ A scheduler will return in following cases:
 
 
 7
-
 After the execution returns, process the next batch of commands (all the commands
 till next EMPTY_LINE or EOF).
 8
@@ -114,60 +91,55 @@ issues. This marks the END of the execution.
 9
 Print the stats of the current system. See Listing 16.
 
-1 package ProjectManagement;
-2 /**
-3 * DO NOT MODIFY
-4 */
-5 public interface SchedulerInterface {
-6 /**
-7 * @param cmd Handles Project creation. Input is the command from INP1 file in array f
-ormat (use space to split it)
-8 */
-9 void handle_project(String[] cmd);
-10 /**
-11 * @param cmd Handles Job creation. Input is the command from INP1 file in array for
-mat (use space to split it)
-12 */
-13 void handle_job(String[] cmd);
-14 /**
-15 * @param name Handles user creation
-16 */
-17 void handle_user(String name);
-18 /**
-19 * Returns status of a job
-20 *
-21 * @param key
-22 */
-23 void handle_query(String key);
-24 /**
-25 * Next cycle, is executed whenever an empty line is found.
-26 */
-27 void handle_empty_line();
-28 /**
-29 * Executed as a thread to server a job.
-30 */
-31 void schedule();
-32 /**
-33 * Add budget to a project Input is the command from INP1 file in array format (use spa
-ce to split it)
-34 *
-35 * @param cmd
-36 */
-37 void handle_add(String[] cmd);
-
-
-38 /**
-
-39 * If there are no lines in the input commands, but there are jobs which can be executed,
-let the system run till there are no jobs left (which can be run).
-40 */
-41 void run_to_completion();
-42 /**
-43 * After execution is done, print the stats of teh system
-44 */
-45 void print_stats();
-46 }
+```
+package ProjectManagement;
+/**
+* DO NOT MODIFY
+*/
+public interface SchedulerInterface {
+/**
+* @param cmd Handles Project creation. Input is the command from INP1 file in array format (use space to split it)
+*/
+void handle_project(String[] cmd);
+/**
+* @param cmd Handles Job creation. Input is the command from INP1 file in array format (use space to split it)
+*/
+void handle_job(String[] cmd);
+/**
+* @param name Handles user creation
+*/
+void handle_user(String name);
+/**
+* Returns status of a job
+*
+* @param key
+*/
+void handle_query(String key);
+/**
+* Next cycle, is executed whenever an empty line is found.
+*/
+void handle_empty_line();
+/**
+* Executed as a thread to server a job.
+*/
+void schedule();
+/**
+* Add budget to a project Input is the command from INP1 file in array format (use space to split it)
+*
+* @param cmd
+*/
+void handle_add(String[] cmd);
+/**
+* If there are no lines in the input commands, but there are jobs which can be executed,let the system run till there are no jobs left (which can be run).
+*/
+void run_to_completion();
+/**
+* After execution is done, print the stats of teh system
+*/
+void print_stats();
+}
 Listing 14: Interface specification
+```
 
 1 USER Rob
 2 USER Harry
